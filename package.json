@@ -15,14 +15,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "yarn typecheck && lint-staged"
     }
   },
   "lint-staged": {
     "src/**/*.{json,js,jsx,ts,tsx}": [
-      "yarn format",
-      "yarn typecheck",
-      "yarn lint"
+      "prettier --write",
+      "eslint"
     ]
   },
   "dependencies": {
