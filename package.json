@@ -10,7 +10,20 @@
     "eject": "expo eject",
     "typecheck": "tsc",
     "format:check": "prettier --check \"**/*.{js,jsx,json,ts,tsx}\"",
-    "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx}\""
+    "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{json,js,jsx,ts,tsx}": [
+      "yarn format",
+      "yarn typecheck",
+      "yarn lint"
+    ]
   },
   "dependencies": {
     "expo": "~43.0.2",
@@ -24,6 +37,13 @@
     "@babel/core": "^7.12.9",
     "@types/react": "~17.0.21",
     "@types/react-native": "~0.64.12",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.27.1",
+    "husky": "4",
+    "lint-staged": "^12.1.2",
     "prettier": "2.5.1",
     "typescript": "~4.3.5"
   },
