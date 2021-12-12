@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Game, Home } from './screens';
+import { Game, Home } from '@screens';
 
 export function App() {
   return (
