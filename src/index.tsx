@@ -1,12 +1,22 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Game, Home } from '@screens';
+import { StyleSheet, View, Text } from 'react-native';
+import {
+  useFonts,
+  DeliusUnicase_400Regular,
+  DeliusUnicase_700Bold,
+} from '@expo-google-fonts/delius-unicase';
+import AppLoading from 'expo-app-loading';
 
 export function App() {
+  const [fontsLoaded] = useFonts({
+    DeliusUnicase_400Regular,
+    DeliusUnicase_700Bold,
+  });
+  if (!fontsLoaded) return <AppLoading />;
+
   return (
     <View style={styles.container}>
-      <Home />
-      <Game />
+      <Text style={{ fontSize: 25 }}>Hello World</Text>
     </View>
   );
 }
