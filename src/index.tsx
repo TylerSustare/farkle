@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import {
   useFonts,
   DeliusUnicase_400Regular,
   DeliusUnicase_700Bold,
 } from '@expo-google-fonts/delius-unicase';
+import { Text } from '@components';
 import AppLoading from 'expo-app-loading';
 
 export function App() {
