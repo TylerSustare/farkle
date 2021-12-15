@@ -21,6 +21,8 @@ module.exports = {
   rules: {
     'no-console': 'error',
     'no-unused-vars': 'error',
+    '@typescript-eslint/explicit-function-return-type': 'error',
+    '@typescript-eslint/no-explicit-any': 'error',
   },
   settings: {
     react: {
