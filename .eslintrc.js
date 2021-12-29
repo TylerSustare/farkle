@@ -21,7 +21,8 @@ module.exports = {
   rules: {
     'no-console': 'error',
     'no-unused-vars': 'error',
-    '@typescript-eslint/explicit-function-return-type': 'error',
+    // Require return statements, except for callbacks
+    '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: true }],
     '@typescript-eslint/no-explicit-any': 'error',
   },
   settings: {

@@ -16,6 +16,5 @@ export function Bootstrap({ children }: Props): ReactElement {
     DeliusUnicase_700Bold,
   });
 
-  if (!fontsLoaded) return <AppLoading />;
   return fontsLoaded ? <>{children}</> : <AppLoading />;
 }
