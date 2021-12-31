@@ -1,2 +1,2 @@
-import { App } from './src';
-export default App;
+import 'react-native-gesture-handler';
+export {App as default} from './src';
