@@ -1,6 +1,6 @@
-import React, { ReactElement } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import React, { ReactElement } from 'react';
 import { Game, Home } from '@screens';
 
 export type StackNavigatorParams = {

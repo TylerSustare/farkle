@@ -22,7 +22,10 @@ module.exports = {
     'no-console': 'error',
     'no-unused-vars': 'error',
     // Require return statements, except for callbacks
-    '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: true }],
+    '@typescript-eslint/explicit-function-return-type': [
+      'error',
+      { allowExpressions: true },
+    ],
     '@typescript-eslint/no-explicit-any': 'error',
   },
   settings: {

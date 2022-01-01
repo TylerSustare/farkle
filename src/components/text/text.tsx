@@ -17,3 +17,5 @@ export function Text({ children, style, bold, ...props }: Props): ReactElement {
     </NativeText>
   );
 }
+
+export default Text;

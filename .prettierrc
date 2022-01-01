@@ -3,5 +3,17 @@
   "trailingComma": "all",
   "semi": true,
   "bracketSpacing": true,
-  "arrowParens": "always"
+  "arrowParens": "always",
+  "importOrder": [
+    "^@assets/(.*)$",
+    "^@components(.*)$",
+    "^@config/(.*)$",
+    "^@contexts(.*)$",
+    "^@hooks(.*)$",
+    "^@screens(.*)$",
+    "^@utils(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": false,
+  "importOrderSortSpecifiers": true
 }
