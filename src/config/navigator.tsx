@@ -1,11 +1,11 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React, { ReactElement } from 'react';
-import { Game, Home } from '@screens';
+import { Home, SinglePlayerGame } from '@screens';
 
 export type StackNavigatorParams = {
   Home: undefined;
-  Game: { gameId: string };
+  SinglePlayerGame: { gameId: string };
 };
 
 const Stack = createStackNavigator<StackNavigatorParams>();
@@ -17,7 +17,7 @@ export function Navigator(): ReactElement {
         initialRouteName="Home"
       >
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Game" component={Game} />
+        <Stack.Screen name="SinglePlayerGame" component={SinglePlayerGame} />
       </Stack.Navigator>
     </NavigationContainer>
   );

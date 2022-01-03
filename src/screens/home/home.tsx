@@ -5,12 +5,11 @@ import { Button, GradientBackground, Text } from '@components';
 import { StackNavigatorParams } from '@config/navigator';
 import { styles } from './home.styles';
 
-// eslint-disable-next-line no-unused-vars
 interface Props {
   navigation: StackNavigationProp<StackNavigatorParams, 'Home'>;
 }
 
-export default function Home(): ReactElement {
+export default function Home({ navigation }: Props): ReactElement {
   return (
     <GradientBackground>
       <ScrollView contentContainerStyle={styles.container}>
@@ -20,7 +19,9 @@ export default function Home(): ReactElement {
           <Button
             style={styles.button}
             title="Single Player"
-            onPress={() => alert('single player')}
+            onPress={() =>
+              navigation.navigate('SinglePlayerGame', { gameId: '123' })
+            }
           />
           <Button
             style={styles.button}
