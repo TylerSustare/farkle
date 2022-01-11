@@ -8,7 +8,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest --ci",
+    "test": "jest",
+    "test:ci": "jest --ci",
     "test:watch": "jest --watch",
     "typecheck": "tsc",
     "format:check": "prettier --check \"**/*.{js,jsx,json,ts,tsx}\"",
@@ -17,7 +18,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test && yarn typecheck && lint-staged"
+      "pre-commit": "yarn test:ci && yarn typecheck && lint-staged"
     }
   },
   "lint-staged": {
@@ -27,9 +28,12 @@
     ]
   },
   "jest": {
-    "preset": "react-native",
+    "preset": "jest-expo",
     "setupFilesAfterEnv": [
       "@testing-library/jest-native/extend-expect"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
     ]
   },
   "dependencies": {
@@ -41,6 +45,7 @@
     "expo-font": "~10.0.3",
     "expo-linear-gradient": "~10.0.3",
     "expo-status-bar": "~1.1.0",
+    "jest-expo": "~43.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
