@@ -9,6 +9,7 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "test": "jest",
+    "test:changed": "jest --onlyChanged",
     "test:ci": "jest --ci",
     "test:watch": "jest --watch",
     "typecheck": "tsc",
@@ -18,7 +19,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test:ci && yarn typecheck && lint-staged"
+      "pre-commit": "yarn test:changed && yarn typecheck && lint-staged"
     }
   },
   "lint-staged": {

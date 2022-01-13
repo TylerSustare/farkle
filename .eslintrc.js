@@ -20,7 +20,7 @@ module.exports = {
   plugins: ['react', '@typescript-eslint'],
   rules: {
     'no-console': 'error',
-    'no-unused-vars': 'error',
+    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     // Require return statements, except for callbacks
     '@typescript-eslint/explicit-function-return-type': [
       'error',
