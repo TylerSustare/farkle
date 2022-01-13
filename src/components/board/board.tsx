@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react';
 import { TouchableOpacity, View } from 'react-native';
+import { BoardState } from '@utils';
 import { Text } from '../text/text';
 
-export type Cell = 'x' | 'o' | null;
 interface Props {
-  state: [Cell, Cell, Cell, Cell, Cell, Cell, Cell, Cell, Cell];
+  state: BoardState;
   size: number;
   onCellPress: (_index: number) => void;
 }
