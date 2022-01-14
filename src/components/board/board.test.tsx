@@ -1,19 +1,20 @@
 import { fireEvent, render } from '@testing-library/react-native';
 import React from 'react';
-import { Board, Cell } from './board';
+import { BoardState } from '@utils';
+import { Board } from './board';
 
 describe('<Board />', () => {
-  const emptyBoardState: [
-    Cell,
-    Cell,
-    Cell,
-    Cell,
-    Cell,
-    Cell,
-    Cell,
-    Cell,
-    Cell,
-  ] = [null, null, null, null, null, null, null, null, null];
+  const emptyBoardState: BoardState = [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ];
   it('should render', () => {
     const board = render(
       <Board state={emptyBoardState} size={1} onCellPress={jest.fn} />,
