@@ -1,4 +1,11 @@
-import { BoardDirections, BoardResult, BoardState, Cell, Moves } from './types';
+import {
+  BoardDirections,
+  BoardResult,
+  BoardState,
+  Cell,
+  DiagonalDirection,
+  Moves,
+} from './types';
 
 export function formattedBoard(board: BoardState): string {
   return board
@@ -31,36 +38,61 @@ export const availableMoves = (state: BoardState): Moves[] => {
   return moves;
 };
 
-const winningLines = [
-  // horizontal
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  // vertical
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  // diagonal
-  [0, 4, 8],
-  [2, 4, 6],
+interface WinningCondition {
+  cells: Moves[];
+  direction: BoardDirections;
+  row?: 1 | 2 | 3;
+  column?: 1 | 2 | 3;
+  diagonal?: DiagonalDirection;
+}
+export const winningConditions: WinningCondition[] = [
+  {
+    cells: [0, 1, 2],
+    direction: 'horizontal',
+    row: 1,
+  },
+  {
+    cells: [3, 4, 5],
+    direction: 'horizontal',
+    row: 2,
+  },
+  {
+    cells: [6, 7, 8],
+    direction: 'horizontal',
+    row: 3,
+  },
+  {
+    cells: [0, 3, 6],
+    direction: 'vertical',
+    column: 1,
+  },
+  {
+    cells: [1, 4, 7],
+    direction: 'vertical',
+    column: 2,
+  },
+  {
+    cells: [2, 5, 8],
+    direction: 'vertical',
+    column: 3,
+  },
+  {
+    cells: [0, 4, 8],
+    direction: 'diagonal',
+    diagonal: 'main',
+  },
+  {
+    cells: [2, 4, 6],
+    direction: 'diagonal',
+    diagonal: 'counter',
+  },
 ];
-
-const winningDirections: Record<number, BoardDirections> = {
-  0: 'horizontal',
-  1: 'horizontal',
-  2: 'horizontal',
-  3: 'vertical',
-  4: 'vertical',
-  5: 'vertical',
-  6: 'diagonal',
-  7: 'diagonal',
-};
 
 export const isGameOver = (state: BoardState): BoardResult | false => {
   if (isEmpty(state)) return false;
 
-  for (let index = 0; index < winningLines.length; index++) {
-    const winningCondition = winningLines[index];
+  for (let index = 0; index < winningConditions.length; index++) {
+    const winningCondition = winningConditions[index].cells;
     const [cell1, cell2, cell3] = winningCondition;
 
     // Check if all cells are the same player
@@ -69,7 +101,10 @@ export const isGameOver = (state: BoardState): BoardResult | false => {
       state[cell1] === state[cell2] &&
       state[cell1] === state[cell3]
     ) {
-      return getBoardResult({ index: index, player: state[cell1] });
+      return getWinnerResults({
+        conditions: winningConditions[index],
+        player: state[cell1],
+      });
     }
   }
   if (isFull(state)) return { winner: null };
@@ -77,25 +112,19 @@ export const isGameOver = (state: BoardState): BoardResult | false => {
 };
 
 interface GetBoardResultArgs {
-  index: number;
+  conditions: WinningCondition;
   player: Cell;
 }
-export const getBoardResult = ({
-  index,
+export const getWinnerResults = ({
+  conditions,
   player,
 }: GetBoardResultArgs): BoardResult => {
-  const winner: BoardResult = {
+  const { direction, row, column, diagonal } = conditions;
+  return {
     winner: player,
-    direction: winningDirections[index],
+    direction,
+    column,
+    row,
+    diagonal,
   };
-  if (index < 3) {
-    winner.row = index === 0 ? 1 : index === 1 ? 2 : 3;
-  }
-  if (index >= 3 && index <= 5) {
-    winner.column = index === 3 ? 1 : index === 4 ? 2 : 3;
-  }
-  if (index >= 6) {
-    winner.diagonal = index === 6 ? 'main' : 'counter';
-  }
-  return winner;
 };

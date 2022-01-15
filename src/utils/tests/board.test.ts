@@ -1,10 +1,11 @@
 import {
   availableMoves,
   formattedBoard,
-  getBoardResult,
+  getWinnerResults,
   isEmpty,
   isFull,
   isGameOver,
+  winningConditions,
 } from '../board';
 import { BoardResult, BoardState } from '../types';
 
@@ -104,7 +105,7 @@ describe('board utility tests', () => {
     });
   });
 
-  describe('getBoardResult', () => {
+  describe('getWinnerResults', () => {
     describe('horizontal wins', () => {
       it('should declare "x" the winner for a horizontal win in row 1', () => {
         const result: BoardResult = {
@@ -112,7 +113,9 @@ describe('board utility tests', () => {
           direction: 'horizontal',
           winner: 'x',
         };
-        expect(getBoardResult({ index: 0, player: 'x' })).toEqual(result);
+        expect(
+          getWinnerResults({ player: 'x', conditions: winningConditions[0] }),
+        ).toEqual(result);
       });
       it('should declare "x" the winner for a horizontal win in row 2', () => {
         const result: BoardResult = {
@@ -120,7 +123,9 @@ describe('board utility tests', () => {
           direction: 'horizontal',
           winner: 'x',
         };
-        expect(getBoardResult({ index: 1, player: 'x' })).toEqual(result);
+        expect(
+          getWinnerResults({ conditions: winningConditions[1], player: 'x' }),
+        ).toEqual(result);
       });
       it('should declare "o" the winner for a horizontal win in row 3', () => {
         const result: BoardResult = {
@@ -128,7 +133,9 @@ describe('board utility tests', () => {
           direction: 'horizontal',
           winner: 'o',
         };
-        expect(getBoardResult({ index: 2, player: 'o' })).toEqual(result);
+        expect(
+          getWinnerResults({ conditions: winningConditions[2], player: 'o' }),
+        ).toEqual(result);
       });
     });
 
@@ -139,7 +146,9 @@ describe('board utility tests', () => {
           direction: 'vertical',
           winner: 'x',
         };
-        expect(getBoardResult({ index: 5, player: 'x' })).toEqual(result);
+        expect(
+          getWinnerResults({ conditions: winningConditions[5], player: 'x' }),
+        ).toEqual(result);
       });
       it('should declare "x" the winner for a vertical win in column 2', () => {
         const result: BoardResult = {
@@ -147,7 +156,9 @@ describe('board utility tests', () => {
           direction: 'vertical',
           winner: 'x',
         };
-        expect(getBoardResult({ index: 4, player: 'x' })).toEqual(result);
+        expect(
+          getWinnerResults({ conditions: winningConditions[4], player: 'x' }),
+        ).toEqual(result);
       });
       it('should declare "o" the winner for a vertical win in column 1', () => {
         const result: BoardResult = {
@@ -155,7 +166,9 @@ describe('board utility tests', () => {
           direction: 'vertical',
           winner: 'o',
         };
-        expect(getBoardResult({ index: 3, player: 'o' })).toEqual(result);
+        expect(
+          getWinnerResults({ conditions: winningConditions[3], player: 'o' }),
+        ).toEqual(result);
       });
     });
 
@@ -166,7 +179,9 @@ describe('board utility tests', () => {
           direction: 'diagonal',
           winner: 'x',
         };
-        expect(getBoardResult({ index: 6, player: 'x' })).toEqual(result);
+        expect(
+          getWinnerResults({ conditions: winningConditions[6], player: 'x' }),
+        ).toEqual(result);
       });
       it('should declare "o" the winner for a diagonal win in the counter diagonal', () => {
         const result: BoardResult = {
@@ -174,7 +189,9 @@ describe('board utility tests', () => {
           direction: 'diagonal',
           winner: 'o',
         };
-        expect(getBoardResult({ index: 7, player: 'o' })).toEqual(result);
+        expect(
+          getWinnerResults({ conditions: winningConditions[7], player: 'o' }),
+        ).toEqual(result);
       });
     });
   });
