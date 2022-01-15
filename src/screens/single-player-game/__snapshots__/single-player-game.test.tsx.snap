@@ -1,0 +1,404 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SinglePlayerGame /> WIP test - should render the single player screen 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <ViewManagerAdapter_ExpoLinearGradient
+    proxiedProperties={
+      Object {
+        "colors": Array [
+          4278218401,
+          4291767083,
+        ],
+        "endPoint": undefined,
+        "locations": undefined,
+        "startPoint": undefined,
+      }
+    }
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
+  <RNCSafeAreaView
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "DeliusUnicase_400Regular",
+          },
+          undefined,
+        ]
+      }
+    >
+      Game
+    </Text>
+    <View
+      style={
+        Object {
+          "backgroundColor": "green",
+          "flexDirection": "row",
+          "flexWrap": "wrap",
+          "height": 300,
+          "width": 300,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "red",
+            "borderWidth": 1,
+            "height": "33.33%",
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": "33.33%",
+          }
+        }
+        testID="cell-0"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "DeliusUnicase_400Regular",
+              },
+              Object {
+                "fontSize": 37.5,
+              },
+            ]
+          }
+        >
+          x
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "red",
+            "borderWidth": 1,
+            "height": "33.33%",
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": "33.33%",
+          }
+        }
+        testID="cell-1"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "DeliusUnicase_400Regular",
+              },
+              Object {
+                "fontSize": 37.5,
+              },
+            ]
+          }
+        />
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "red",
+            "borderWidth": 1,
+            "height": "33.33%",
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": "33.33%",
+          }
+        }
+        testID="cell-2"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "DeliusUnicase_400Regular",
+              },
+              Object {
+                "fontSize": 37.5,
+              },
+            ]
+          }
+        >
+          x
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "red",
+            "borderWidth": 1,
+            "height": "33.33%",
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": "33.33%",
+          }
+        }
+        testID="cell-3"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "DeliusUnicase_400Regular",
+              },
+              Object {
+                "fontSize": 37.5,
+              },
+            ]
+          }
+        >
+          o
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "red",
+            "borderWidth": 1,
+            "height": "33.33%",
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": "33.33%",
+          }
+        }
+        testID="cell-4"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "DeliusUnicase_400Regular",
+              },
+              Object {
+                "fontSize": 37.5,
+              },
+            ]
+          }
+        >
+          x
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "red",
+            "borderWidth": 1,
+            "height": "33.33%",
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": "33.33%",
+          }
+        }
+        testID="cell-5"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "DeliusUnicase_400Regular",
+              },
+              Object {
+                "fontSize": 37.5,
+              },
+            ]
+          }
+        />
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "red",
+            "borderWidth": 1,
+            "height": "33.33%",
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": "33.33%",
+          }
+        }
+        testID="cell-6"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "DeliusUnicase_400Regular",
+              },
+              Object {
+                "fontSize": 37.5,
+              },
+            ]
+          }
+        >
+          x
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "red",
+            "borderWidth": 1,
+            "height": "33.33%",
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": "33.33%",
+          }
+        }
+        testID="cell-7"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "DeliusUnicase_400Regular",
+              },
+              Object {
+                "fontSize": 37.5,
+              },
+            ]
+          }
+        >
+          o
+        </Text>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "red",
+            "borderWidth": 1,
+            "height": "33.33%",
+            "justifyContent": "center",
+            "opacity": 1,
+            "width": "33.33%",
+          }
+        }
+        testID="cell-8"
+      >
+        <Text
+          style={
+            Array [
+              Object {
+                "fontFamily": "DeliusUnicase_400Regular",
+              },
+              Object {
+                "fontSize": 37.5,
+              },
+            ]
+          }
+        >
+          o
+        </Text>
+      </View>
+    </View>
+  </RNCSafeAreaView>
+</View>
+`;
