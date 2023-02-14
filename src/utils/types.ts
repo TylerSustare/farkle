@@ -10,3 +10,15 @@ export type BoardResult = {
   row?: 1 | 2 | 3;
   diagonal?: DiagonalDirection;
 };
+export interface WinningCondition {
+  cells: Moves[];
+  direction: BoardDirections;
+  row?: 1 | 2 | 3;
+  column?: 1 | 2 | 3;
+  diagonal?: DiagonalDirection;
+}
+
+export interface GetBoardResultArgs {
+  conditions: WinningCondition;
+  player: Cell;
+}

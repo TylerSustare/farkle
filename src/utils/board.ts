@@ -1,10 +1,9 @@
 import {
-  BoardDirections,
   BoardResult,
   BoardState,
-  Cell,
-  DiagonalDirection,
+  GetBoardResultArgs,
   Moves,
+  WinningCondition,
 } from './types';
 
 export function formattedBoard(board: BoardState): string {
@@ -38,13 +37,6 @@ export const availableMoves = (state: BoardState): Moves[] => {
   return moves;
 };
 
-interface WinningCondition {
-  cells: Moves[];
-  direction: BoardDirections;
-  row?: 1 | 2 | 3;
-  column?: 1 | 2 | 3;
-  diagonal?: DiagonalDirection;
-}
 export const winningConditions: WinningCondition[] = [
   {
     cells: [0, 1, 2],
@@ -111,10 +103,6 @@ export const isGameOver = (state: BoardState): BoardResult | false => {
   return false;
 };
 
-interface GetBoardResultArgs {
-  conditions: WinningCondition;
-  player: Cell;
-}
 export const getWinnerResults = ({
   conditions,
   player,
